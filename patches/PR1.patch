@@ -1,0 +1,26 @@
+diff --git a/asio/include/asio/ip/unicast.hpp b/asio/include/asio/ip/unicast.hpp
+index 884c674..7b12059 100644
+--- a/asio/include/asio/ip/unicast.hpp
++++ b/asio/include/asio/ip/unicast.hpp
+@@ -18,7 +18,7 @@
+ #include "asio/detail/config.hpp"
+ #include <cstddef>
+ #include "asio/ip/detail/socket_option.hpp"
+-
++#include <netinet/in.h>
+ #include "asio/detail/push_options.hpp"
+
+ namespace asio {
+diff --git a/asio/include/asio/signal_set_base.hpp b/asio/include/asio/signal_set_base.hpp
+index 8c50bf5..67be8ae 100644
+--- a/asio/include/asio/signal_set_base.hpp
++++ b/asio/include/asio/signal_set_base.hpp
+@@ -59,7 +59,7 @@ public:
+
+ #else // defined(GENERATING_DOCUMENTATION)
+
+-  enum class flags : int
++  enum class flags : long
+   {
+     none = 0,
+     restart = ASIO_OS_DEF(SA_RESTART),
